@@ -10,7 +10,7 @@ height = 732.0
 [node name="WinArea" type="Area2D" unique_id=1441771239]
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=995534194]
-modulate = Color(0.100000024, 1, 0, 0.23529412)
+modulate = Color(0.61960787, 0.9490196, 0.60784316, 1)
 mesh = SubResource("QuadMesh_3alhw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1367200694]

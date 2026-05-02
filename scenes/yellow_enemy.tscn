@@ -3,6 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://chw10etwtlq57" path="res://scenes/enemy.tscn" id="1_tgq7m"]
 [ext_resource type="Texture2D" uid="uid://dvtl2tjd65von" path="res://assets/textures/yellow_enemy.png" id="2_4hmfy"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_4hmfy"]
+radius = 40.0
+
 [sub_resource type="Animation" id="Animation_2uwp8"]
 length = 0.001
 tracks/0/type = "value"
@@ -44,6 +47,9 @@ _data = {
 
 [node name="Sprite2D" parent="Area2D" parent_id_path=PackedInt32Array(1726786952) index="0" unique_id=398096494]
 texture = ExtResource("2_4hmfy")
+
+[node name="CollisionShape2D" parent="Area2D" parent_id_path=PackedInt32Array(1726786952) index="1" unique_id=1211488741]
+shape = SubResource("CircleShape2D_4hmfy")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1" unique_id=996221252]
 libraries/ = SubResource("AnimationLibrary_ro1nu")

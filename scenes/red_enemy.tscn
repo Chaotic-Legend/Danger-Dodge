@@ -3,6 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://chw10etwtlq57" path="res://scenes/enemy.tscn" id="1_fsb3w"]
 [ext_resource type="Texture2D" uid="uid://c6ig1nmjvjjw4" path="res://assets/textures/red_square_angry.png" id="2_or7ri"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_or7ri"]
+size = Vector2(75, 75)
+
 [sub_resource type="Animation" id="Animation_or7ri"]
 length = 0.001
 tracks/0/type = "value"
@@ -44,6 +47,9 @@ _data = {
 
 [node name="Sprite2D" parent="Area2D" parent_id_path=PackedInt32Array(1726786952) index="0" unique_id=398096494]
 texture = ExtResource("2_or7ri")
+
+[node name="CollisionShape2D" parent="Area2D" parent_id_path=PackedInt32Array(1726786952) index="1" unique_id=1211488741]
+shape = SubResource("RectangleShape2D_or7ri")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1" unique_id=387035615]
 libraries/ = SubResource("AnimationLibrary_faa20")
