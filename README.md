@@ -1,4 +1,4 @@
-[![Static Badge](https://img.shields.io/badge/Godot%20Engine-4.6.2-blue?style=plastic&logo=godotengine)](https://godotengine.org/) ![GitHub top language](https://img.shields.io/github/languages/top/Chaotic-Legend/Danger-Dodge?logo=godotengine)
+[![Static Badge](https://img.shields.io/badge/Godot%20Engine-4.6.3-blue?style=plastic&logo=godotengine)](https://godotengine.org/) ![GitHub top language](https://img.shields.io/github/languages/top/Chaotic-Legend/Danger-Dodge?logo=godotengine)
 
 # Danger Dodge | Project Touchstone #
 [Your First 2D GAME From Zero in Godot 4! (Complete Beginner Tutorial)](https://www.youtube.com/watch?v=y2s3NK8KT_o) by [Kaan Alpar](https://www.youtube.com/@KaanAlpar) ([GitHub](https://github.com/KaanAlpar))
@@ -125,7 +125,7 @@ This task is a realistic and appropriate assignment for a junior-level developer
 
 13. A "Start!" text appears on the center screen when the game begins.
 - Run the main scene and observe that a "Start!" message appears at the center of the game and disappears after two seconds.
-- The task prompt requires a "Start!" text to briefly display in the center of the screen for two seconds when the game begins.
+- The task prompt requires a "Start!" message to appear briefly in the center of the screen for two seconds at the beginning of the game.
 
 14. The level includes a light green area that triggers a win when touched.
 - Run the main scene and move the player character into the light green rectangular area to verify that a "You Win!" message appears.
@@ -135,4 +135,4 @@ This task is a realistic and appropriate assignment for a junior-level developer
 - Run the main scene and observe that the background music begins playing and loops at the end of the music audio.
 - The task prompt requires implementing looping background music that automatically starts when the game begins.
 <br>
-Godot - https://feather.openai.com/tasks/2b3651a3-b2b8-47e9-aae6-15e757329fb6/stage/prompt_creation - Awaiting response.
+Godot - Full Vertical Slice (Game Prototype) - Finished prompt creation.

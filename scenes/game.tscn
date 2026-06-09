@@ -14,7 +14,7 @@ size = Vector2(799, 20)
 
 [sub_resource type="LabelSettings" id="LabelSettings_gee14"]
 font_size = 120
-outline_size = 12
+outline_size = 15
 outline_color = Color(0, 0, 0, 1)
 
 [node name="Game" type="Node2D" unique_id=852591595]
@@ -108,29 +108,64 @@ scale = Vector2(-1, 1)
 [node name="Player" parent="." unique_id=9245583 instance=ExtResource("1_uwrxv")]
 position = Vector2(60, 360)
 
-[node name="YouWinLabel" type="Label" parent="." unique_id=1307732221]
-visible = false
-offset_left = 385.0
-offset_top = 235.0
-offset_right = 893.0
-offset_bottom = 400.0
-text = "You Win!"
-label_settings = SubResource("LabelSettings_gee14")
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="UI" type="CanvasLayer" parent="." unique_id=1601139616]
+process_mode = 3
 
-[node name="StartLabel" type="Label" parent="." unique_id=1288989741]
+[node name="CenterContainer" type="CenterContainer" parent="UI" unique_id=479964692]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/CenterContainer" unique_id=1545049262]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="StartLabel" type="Label" parent="UI/CenterContainer/VBoxContainer" unique_id=1288989741]
 visible = false
-offset_left = 385.0
-offset_top = 235.0
-offset_right = 893.0
-offset_bottom = 400.0
+layout_mode = 2
 text = "Start!"
 label_settings = SubResource("LabelSettings_gee14")
 horizontal_alignment = 1
 vertical_alignment = 1
+uppercase = true
+
+[node name="YouWinLabel" type="Label" parent="UI/CenterContainer/VBoxContainer" unique_id=1307732221]
+visible = false
+layout_mode = 2
+text = "You Win!"
+label_settings = SubResource("LabelSettings_gee14")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="PauseLabel" type="Label" parent="UI/CenterContainer/VBoxContainer" unique_id=1610321143]
+visible = false
+layout_mode = 2
+text = "Paused"
+label_settings = SubResource("LabelSettings_gee14")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="PlayAgainButton" type="Button" parent="UI/CenterContainer/VBoxContainer" unique_id=312850288]
+visible = false
+custom_minimum_size = Vector2(430, 90)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 44
+text = "PLAY AGAIN?"
 
 [connection signal="body_entered" from="WinArea" to="." method="_on_win_area_body_entered"]
+[connection signal="pressed" from="UI/CenterContainer/VBoxContainer/PlayAgainButton" to="." method="_on_play_again_button_pressed"]
 
 [editable path="Walls/Wall3"]
 [editable path="Walls/Wall4"]

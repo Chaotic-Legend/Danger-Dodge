@@ -5,13 +5,14 @@ var my_variable = Vector2(10, 8)
 var speed = 300.0
 var spawn_point = Vector2(60, 360)
 var can_move := false
+var is_respawning := false
 
 func _physics_process(_delta: float) -> void:
 	if not can_move:
 		velocity = Vector2.ZERO
 		move_and_slide()
 		return
-	var direction = Vector2(0,0)
+	var direction = Vector2(0, 0)
 	if Input.is_action_pressed("move_right"):
 		direction.x = 1
 	if Input.is_action_pressed("move_left"):
@@ -20,11 +21,22 @@ func _physics_process(_delta: float) -> void:
 		direction.y = -1
 	if Input.is_action_pressed("move_down"):
 		direction.y = 1
-	
 	direction = direction.normalized()
 	velocity = direction * speed
 	move_and_slide()
 
-func reset_player():
-	global_position = spawn_point
+func reset_player() -> void:
+	if is_respawning:
+		return
+	is_respawning = true
+	can_move = false
+	velocity = Vector2.ZERO
 	$HitSound.play()
+	$Sprite2D.visible = false
+	$CollisionShape2D.set_deferred("disabled", true)
+	await get_tree().create_timer(0.5, false).timeout
+	global_position = spawn_point
+	$Sprite2D.visible = true
+	$CollisionShape2D.set_deferred("disabled", false)
+	can_move = true
+	is_respawning = false
